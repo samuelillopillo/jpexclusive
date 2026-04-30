@@ -1810,3 +1810,220 @@ footer {
         transform: translateX(4px);
     }
 }
+
+
+/* ── FIXES SAFARI / iPhone ── */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* En móvil el cursor personalizado no aplica */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+
+    #cur,
+    #ring {
+        display: none;
+    }
+
+    /* NAV móvil */
+    nav {
+        padding: .9rem 1.2rem;
+        gap: .5rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-ig {
+        font-size: .55rem;
+        padding: .4rem .8rem;
+    }
+
+    /* HERO móvil */
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding: 6rem 1.2rem 3rem;
+        gap: 2rem;
+    }
+
+    .hero-visual {
+        height: 260px;
+    }
+
+    .hero-h1 {
+        font-size: clamp(2.8rem, 14vw, 5rem);
+    }
+
+    /* PRODUCTS móvil — 1 columna */
+    .products {
+        padding: 4rem 1.2rem;
+    }
+
+    .pg {
+        grid-template-columns: 1fr;
+        gap: 1px;
+    }
+
+    .pc:nth-child(1),
+    .pc:nth-child(2),
+    .pc:nth-child(3),
+    .pc:nth-child(4),
+    .pc:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .pc-inner {
+        aspect-ratio: 4/5;
+        height: auto;
+    }
+
+    /* Mostrar info siempre en móvil (sin hover) */
+    .pc-info {
+        position: static;
+        transform: none !important;
+        background: var(--deep);
+        padding: 1rem;
+    }
+
+    .pc-add-btn {
+        -webkit-appearance: none;
+        border-radius: 0;
+        touch-action: manipulation;
+        padding: .8rem;
+        font-size: .6rem;
+    }
+
+    .pc-sz {
+        padding: .5rem .8rem;
+        font-size: .6rem;
+        touch-action: manipulation;
+    }
+
+    /* HOODIE móvil */
+    .h-sec {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.2rem;
+        gap: 2rem;
+    }
+
+    .h-vis {
+        height: 300px;
+    }
+
+    /* SOON móvil */
+    .soon-sec {
+        padding: 5rem 1.2rem;
+    }
+
+    .soon-images {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* ANGEL móvil */
+    .an-sec {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.2rem;
+        gap: 2rem;
+    }
+
+    .an-vis {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .an-card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* VALUES móvil */
+    .val-sec {
+        padding: 4rem 1.2rem;
+    }
+
+    .val-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* FEED móvil */
+    .ig-sec {
+        padding: 4rem 1.2rem;
+    }
+
+    .feed {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .fi {
+        min-height: 180px;
+    }
+
+    /* CTA móvil */
+    .cta {
+        padding: 4rem 1.2rem;
+    }
+
+    .cta .btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* FOOTER móvil */
+    footer {
+        padding: 3rem 1.2rem 1.5rem;
+    }
+
+    .ft {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    /* CARRITO móvil */
+    .cart-fab {
+        bottom: 1.2rem;
+        right: 1.2rem;
+        width: 52px;
+        height: 52px;
+    }
+
+    .cart-panel {
+        width: 100vw;
+    }
+
+    .cart-footer .btn-main {
+        -webkit-appearance: none;
+        border-radius: 0;
+        touch-action: manipulation;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* iPhone SE y pantallas muy pequeñas */
+@media (max-width: 380px) {
+    .hero-h1 {
+        font-size: 2.4rem;
+    }
+
+    .sec-title {
+        font-size: 2rem;
+    }
+
+    .val-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feed {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
