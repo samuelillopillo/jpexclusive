@@ -2068,6 +2068,13 @@ body {
         margin: 0 0 .5rem 0;
         z-index: auto;
     }
+
+    /* En móvil el badge dentro de pc-info se muestra */
+    .pc-info .pc-badge {
+        display: inline-block;
+        position: static !important;
+        margin-bottom: .6rem;
+    }
 }
 
 /* iPhone SE */
@@ -2101,5 +2108,31 @@ body {
 
     .feed {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* En desktop el badge dentro de pc-info se oculta */
+.pc-info .pc-badge {
+    display: none;
+}
+
+.pc-badge-mobile {
+    display: none;
+}
+
+.pc-badge-desktop {
+    display: block;
+}
+
+/* Móvil: ocultar badge externo, mostrar interno */
+@media (max-width: 900px) {
+    .pc-badge-mobile {
+        display: inline-block;
+        position: static !important;
+        margin-bottom: .6rem;
+    }
+
+    .pc-badge-desktop {
+        display: none;
     }
 }
