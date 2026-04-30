@@ -1822,7 +1822,9 @@ body {
 }
 
 /* En móvil el cursor personalizado no aplica */
-@media (max-width: 768px) {
+/* ── RESPONSIVE MÓVIL ── */
+@media (max-width: 900px) {
+
     body {
         cursor: auto;
     }
@@ -1832,10 +1834,9 @@ body {
         display: none;
     }
 
-    /* NAV móvil */
+    /* NAV */
     nav {
         padding: .9rem 1.2rem;
-        gap: .5rem;
     }
 
     .nav-links {
@@ -1847,7 +1848,7 @@ body {
         padding: .4rem .8rem;
     }
 
-    /* HERO móvil */
+    /* HERO */
     .hero-content {
         grid-template-columns: 1fr;
         padding: 6rem 1.2rem 3rem;
@@ -1862,7 +1863,7 @@ body {
         font-size: clamp(2.8rem, 14vw, 5rem);
     }
 
-    /* PRODUCTS móvil — 1 columna */
+    /* PRODUCTS — columna única, info siempre visible */
     .products {
         padding: 4rem 1.2rem;
     }
@@ -1870,6 +1871,13 @@ body {
     .pg {
         grid-template-columns: 1fr;
         gap: 1px;
+    }
+
+    /* Fix pc overflow */
+    .pc {
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
     }
 
     .pc:nth-child(1),
@@ -1882,33 +1890,78 @@ body {
     }
 
     .pc-inner {
-        aspect-ratio: 4/5;
+        aspect-ratio: 3/4;
         height: auto;
+        width: 100%;
+        flex-shrink: 0;
     }
 
-    /* Mostrar info siempre en móvil (sin hover) */
+    .pc-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    /* Fix pc-info */
     .pc-info {
-        position: static;
+        position: static !important;
         transform: none !important;
         background: var(--deep);
-        padding: 1rem;
+        padding: 1rem 1.2rem 1.4rem;
+        border-top: 1px solid rgba(240, 236, 230, .06);
+        overflow: visible;
     }
 
-    .pc-add-btn {
-        -webkit-appearance: none;
-        border-radius: 0;
-        touch-action: manipulation;
-        padding: .8rem;
-        font-size: .6rem;
+    .pc::after {
+        display: none;
+    }
+
+    /* Fix nombre cortado */
+    .pc-name {
+        font-size: .8rem;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        word-break: break-word;
+    }
+
+    .pc-price {
+        font-size: .7rem;
+        margin-top: .4rem;
+    }
+
+    .pc-sizes {
+        display: flex;
+        gap: .5rem;
+        margin-top: .8rem;
+        flex-wrap: wrap;
     }
 
     .pc-sz {
-        padding: .5rem .8rem;
+        padding: .55rem .9rem;
         font-size: .6rem;
         touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    /* HOODIE móvil */
+    .pc-add-btn {
+        margin-top: .8rem;
+        width: 100%;
+        padding: .85rem;
+        font-size: .6rem;
+        -webkit-appearance: none;
+        border-radius: 0;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .pc-badge {
+        top: .7rem;
+        left: .7rem;
+    }
+
+    /* HOODIE */
     .h-sec {
         grid-template-columns: 1fr;
         padding: 4rem 1.2rem;
@@ -1919,7 +1972,7 @@ body {
         height: 300px;
     }
 
-    /* SOON móvil */
+    /* SOON */
     .soon-sec {
         padding: 5rem 1.2rem;
     }
@@ -1929,7 +1982,7 @@ body {
         gap: 1rem;
     }
 
-    /* ANGEL móvil */
+    /* ANGEL */
     .an-sec {
         grid-template-columns: 1fr;
         padding: 4rem 1.2rem;
@@ -1946,7 +1999,7 @@ body {
         width: 100%;
     }
 
-    /* VALUES móvil */
+    /* VALUES */
     .val-sec {
         padding: 4rem 1.2rem;
     }
@@ -1955,7 +2008,7 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* FEED móvil */
+    /* FEED */
     .ig-sec {
         padding: 4rem 1.2rem;
     }
@@ -1968,7 +2021,7 @@ body {
         min-height: 180px;
     }
 
-    /* CTA móvil */
+    /* CTA */
     .cta {
         padding: 4rem 1.2rem;
     }
@@ -1978,7 +2031,7 @@ body {
         align-items: center;
     }
 
-    /* FOOTER móvil */
+    /* FOOTER */
     footer {
         padding: 3rem 1.2rem 1.5rem;
     }
@@ -1988,7 +2041,7 @@ body {
         gap: 2rem;
     }
 
-    /* CARRITO móvil */
+    /* CARRITO */
     .cart-fab {
         bottom: 1.2rem;
         right: 1.2rem;
@@ -2006,6 +2059,29 @@ body {
         touch-action: manipulation;
         width: 100%;
         text-align: center;
+    }
+
+    /* Badge en móvil — dentro del flujo normal */
+    .pc-badge {
+        position: static !important;
+        display: inline-block;
+        margin: 0 0 .5rem 0;
+        z-index: auto;
+    }
+}
+
+/* iPhone SE */
+@media (max-width: 380px) {
+    .hero-h1 {
+        font-size: 2.4rem;
+    }
+
+    .sec-title {
+        font-size: 2rem;
+    }
+
+    .val-grid {
+        grid-template-columns: 1fr;
     }
 }
 
