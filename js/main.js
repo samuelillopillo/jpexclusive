@@ -8,6 +8,20 @@ document.querySelectorAll('a,button,.pc,.fi,.val-item,.an-card').forEach(el => {
     el.addEventListener('mouseleave', () => { cur.style.transform = 'scale(1)'; ring.style.transform = 'scale(1)'; ring.style.borderColor = 'rgba(255,45,135,.5)'; });
 });
 
+// Cursor en botón WhatsApp
+document.querySelectorAll('.wa-fab').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cur.style.transform = 'scale(2.5)';
+        ring.style.transform = 'scale(1.6)';
+        ring.style.borderColor = '#25d366';
+    });
+    el.addEventListener('mouseleave', () => {
+        cur.style.transform = 'scale(1)';
+        ring.style.transform = 'scale(1)';
+        ring.style.borderColor = 'rgba(255,45,135,.5)';
+    });
+});
+
 // ── TALLAS HOODIE ──
 document.querySelectorAll('.sz').forEach(p => {
     p.addEventListener('click', () => {

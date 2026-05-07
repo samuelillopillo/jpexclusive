@@ -2136,3 +2136,43 @@ body {
         display: none;
     }
 }
+
+/* ── WHATSAPP FLOTANTE ── */
+.wa-fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 5.5rem;
+    /* a la izquierda del carrito */
+    width: 56px;
+    height: 56px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    box-shadow: 0 0 20px rgba(37, 211, 102, .4);
+    transition: transform .3s, background .3s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.wa-fab:hover {
+    transform: scale(1.1);
+    background: #1ebe5d;
+}
+
+.wa-fab svg {
+    width: 26px;
+    height: 26px;
+}
+
+/* Móvil */
+@media (max-width: 900px) {
+    .wa-fab {
+        bottom: 1.2rem;
+        right: 4.8rem;
+        width: 52px;
+        height: 52px;
+    }
+}
